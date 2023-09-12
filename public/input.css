@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('./fonts/montserrat/Montserrat-Medium.ttf');
+}
+@font-face {
+    font-family: 'barlow';
+    src: url('./fonts/barlow/BarlowCondensed-MediumItalic.ttf');
+}
+
+* {
+    font-family: montserrat;
+}
+
+body {
+    color:black;
+}
+
+h3 {
+    font-family: barlow;
+}
+
+.homepage {
+    height: 92vh;
+    width: 95vw;
+    margin: 40px 60px 0 50px;
+    box-shadow: 0 0 30px grey;
+}
+
+/*GLASSES*/
+#coctailGlass {
+    top: 15%;
+    right: 29.2%;
+}
+
+#coctailContent1 {
+    clip-path: polygon(18% 30%, 26% 40%, 46% 59%, 54% 59%, 64% 50%, 82% 30%, 18% 30%);
+}
+
+#highGlass {
+    top: 12%;
+    right: 32%;
+    width: 20%;
+}
+
+#coctailContent2 {
+    clip-path: polygon(25.2% 30%, 74.3% 30%, 67% 140%, 32% 99%, 25.2% 30%);
+}
+
+#oldGlass {
+    left: 44%;
+    top: 30%;
+    width: 27%;
+
+}
+
+#coctailContent3 {
+    clip-path: polygon(21% 42%, 73% 42%, 71% 73%, 23% 73%);
+}
+
+
+
+
+#arrow1 {
+    transform: rotate(-130deg);
+    left: 17%;
+}
