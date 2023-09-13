@@ -30,6 +30,38 @@ h3 {
     box-shadow: 0 0 30px grey;
 }
 
+.menuItem {
+    background-color: yellow;
+    position: relative;
+    cursor:pointer;
+    display: inline-block;
+    margin:0px 1.4vw;
+    border-radius: 15%;
+    width: 17.3%;
+    height: 90%;
+    border: 0 solid green;
+    box-shadow: 0 0 30px grey;
+    transition: border 0.3s;
+}
+
+.menuItemPicked {
+    border: 0.2vw solid yellow;
+}
+
+#coctailMenu::-webkit-scrollbar {
+    width:10%;
+    color:black;
+}
+
+.coctailImage {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    border-radius:15%;
+}
+
+
 /*GLASSES*/
 #coctailGlass {
     top: 15%;
@@ -37,7 +69,9 @@ h3 {
 }
 
 #coctailContent1 {
-    clip-path: polygon(18% 30%, 26% 40%, 46% 59%, 54% 59%, 64% 50%, 82% 30%, 18% 30%);
+    height:23%;
+    margin-top: 20vh;
+    clip-path: polygon(16% 0%, 33% 70%, 46% 100%, 54% 100%, 73% 50%, 84% 0%);
 }
 
 #highGlass {
@@ -47,7 +81,9 @@ h3 {
 }
 
 #coctailContent2 {
-    clip-path: polygon(25.2% 30%, 74.3% 30%, 67% 140%, 32% 99%, 25.2% 30%);
+    height: 60%;
+    margin-top: 20vh;
+    clip-path: polygon(25.1% 0%, 74.3% 0%, 67% 140%, 32% 100%);
 }
 
 #oldGlass {
@@ -58,11 +94,10 @@ h3 {
 }
 
 #coctailContent3 {
-    clip-path: polygon(21% 42%, 73% 42%, 71% 73%, 23% 73%);
+    height: 25%;
+    margin-top: 33vh;
+    clip-path: polygon(21% 0%, 73% 0%, 71% 100%, 23% 100%);
 }
-
-
-
 
 #arrow1 {
     transform: rotate(-130deg);

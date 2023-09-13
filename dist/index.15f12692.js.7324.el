@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"7QhWD":[function(require,module,exports) {
+})({"huunz":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "c767fc22f18de3a7";
+module.bundle.HMR_BUNDLE_ID = "8232929915f12692";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,32 +573,59 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"7SwCM":[function(require,module,exports) {
-/* 
-1.connect with coctail api and fetch data
-2.store ingredients and its color
-3.create function to set a coctail by ingredient count and size
-*/ var _coctailCreatorJs = require("./coctail-creator.js");
-const searchIcon = document.querySelector("#searchIcon"), searchInput = document.querySelector("#searchInput"), coctailName = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), coctailMenu = document.querySelector("#coctailMenu");
-//SEARCH A DRINK
-searchIcon.addEventListener("click", async ()=>{
-    const search = searchInput.value;
-    const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${search}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        if (data.drinks === null) console.log("DRINK NOT FOUND");
-        else {
-            const coctail = data.drinks[0];
-            coctailName.innerHTML = coctail.strDrink;
-            coctailDescription.innerHTML = coctail.strInstructions;
-        }
-    } catch (error) {
-        console.error(error);
-    }
-});
+},{}],"5NRZg":[function(require,module,exports) {
+var _coctailCreatorJs = require("./coctail-creator.js");
+const coctailNameMain = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), coctailMenu = document.querySelector("#coctailMenu");
+for(let i = 0; i < (0, _coctailCreatorJs.coctails).length; i++){
+    const coctail = (0, _coctailCreatorJs.coctails)[i];
+    const menuItem = document.createElement("div");
+    const coctailName = document.createElement("h5");
+    const coctailImage = document.createElement("img");
+    coctailName.classList.add("coctailName");
+    coctailName.innerHTML = `${coctail.name}`;
+    menuItem.classList.add("menuItem");
+    coctailImage.classList.add("coctailImage");
+    coctailImage.setAttribute("src", coctail.imageSource);
+    coctailMenu.appendChild(menuItem);
+    menuItem.appendChild(coctailImage);
+    menuItem.appendChild(coctailName);
+} /* Coctail {name: 'Mojito', imageSoure: './img/coctails/mojito.jpg', description: 'Mix this classic cocktail for a party using fresh …ite rum, sugar, zesty lime and cooling soda water', glass: 'highGlass', mainIngredients: Array(3), …}
+description
+: 
+"Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water"
+extraIngredients
+: 
+(3) ['1 tsp granulated sugar', '10 fresh mint leaves', 'Ice cubes']
+glass
+: 
+"highGlass"
+imageSoure
+: 
+"./img/mojito.jpg"
+mainIngredients
+: 
+Array(3)
+0
+: 
+(3) ['Soda Water', 'F8F8F8', 50]
+1
+: 
+(3) ['White Rum', 'F5F5F5', 35]
+2
+: 
+(3) ['Lime Juice', '63E211', 15]
+length
+: 
+3
+[[Prototype]]
+: 
+Array(0)
+name
+: 
+"Mojito"
 
-},{"./coctail-creator.js":"aOTjL"}]},["7QhWD","7SwCM"], "7SwCM", "parcelRequire4dac")
+*/ 
 
-//# sourceMappingURL=index.f18de3a7.js.map
+},{"./coctail-creator.js":"aOTjL"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
+
+//# sourceMappingURL=index.15f12692.js.map

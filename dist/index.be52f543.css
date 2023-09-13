@@ -241,6 +241,10 @@ img, video {
   --tw-backdrop-sepia: ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .invisible {
   visibility: hidden;
 }
@@ -261,10 +265,6 @@ img, video {
   top: -.125rem;
 }
 
-.left-1\/3 {
-  left: 33.3333%;
-}
-
 .left-1\/4 {
   left: 25%;
 }
@@ -281,16 +281,24 @@ img, video {
   top: 25%;
 }
 
-.top-2\/4 {
-  top: 50%;
+.top-32 {
+  top: 8rem;
 }
 
 .mb-5 {
   margin-bottom: 1.25rem;
 }
 
+.ml-24 {
+  margin-left: 6rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
+}
+
+.box-border {
+  box-sizing: border-box;
 }
 
 .line-clamp-6 {
@@ -384,8 +392,20 @@ img, video {
   flex-direction: column;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .self-end {
   align-self: flex-end;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.whitespace-nowrap {
+  white-space: nowrap;
 }
 
 .rounded-xl {
@@ -434,6 +454,11 @@ img, video {
   line-height: 2.25rem;
 }
 
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
@@ -472,13 +497,46 @@ h3 {
   box-shadow: 0 0 30px gray;
 }
 
+.menuItem {
+  cursor: pointer;
+  background-color: #ff0;
+  border: 0 solid green;
+  border-radius: 15%;
+  width: 17.3%;
+  height: 90%;
+  margin: 0 1.4vw;
+  transition: border .3s;
+  display: inline-block;
+  position: relative;
+  box-shadow: 0 0 30px gray;
+}
+
+.menuItemPicked {
+  border: .2vw solid #ff0;
+}
+
+#coctailMenu::-webkit-scrollbar {
+  color: #000;
+  width: 10%;
+}
+
+.coctailImage {
+  z-index: 0;
+  border-radius: 15%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
 #coctailGlass {
   top: 15%;
   right: 29.2%;
 }
 
 #coctailContent1 {
-  clip-path: polygon(18% 30%, 26% 40%, 46% 59%, 54% 59%, 64% 50%, 82% 30%, 18% 30%);
+  clip-path: polygon(16% 0%, 33% 70%, 46% 100%, 54% 100%, 73% 50%, 84% 0%);
+  height: 23%;
+  margin-top: 20vh;
 }
 
 #highGlass {
@@ -488,7 +546,9 @@ h3 {
 }
 
 #coctailContent2 {
-  clip-path: polygon(25.2% 30%, 74.3% 30%, 67% 140%, 32% 99%, 25.2% 30%);
+  clip-path: polygon(25.1% 0%, 74.3% 0%, 67% 140%, 32% 100%);
+  height: 60%;
+  margin-top: 20vh;
 }
 
 #oldGlass {
@@ -498,7 +558,9 @@ h3 {
 }
 
 #coctailContent3 {
-  clip-path: polygon(21% 42%, 73% 42%, 71% 73%, 23% 73%);
+  clip-path: polygon(21% 0%, 73% 0%, 71% 100%, 23% 100%);
+  height: 25%;
+  margin-top: 33vh;
 }
 
 #arrow1 {

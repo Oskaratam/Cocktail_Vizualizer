@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"7QhWD":[function(require,module,exports) {
+})({"jYNsX":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "c767fc22f18de3a7";
+module.bundle.HMR_BUNDLE_ID = "bb9f2850ae24fa8e";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -573,32 +573,122 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"7SwCM":[function(require,module,exports) {
-/* 
-1.connect with coctail api and fetch data
-2.store ingredients and its color
-3.create function to set a coctail by ingredient count and size
-*/ var _coctailCreatorJs = require("./coctail-creator.js");
-const searchIcon = document.querySelector("#searchIcon"), searchInput = document.querySelector("#searchInput"), coctailName = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), coctailMenu = document.querySelector("#coctailMenu");
-//SEARCH A DRINK
-searchIcon.addEventListener("click", async ()=>{
-    const search = searchInput.value;
-    const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${search}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-        if (data.drinks === null) console.log("DRINK NOT FOUND");
-        else {
-            const coctail = data.drinks[0];
-            coctailName.innerHTML = coctail.strDrink;
-            coctailDescription.innerHTML = coctail.strInstructions;
-        }
-    } catch (error) {
-        console.error(error);
+},{}],"aOTjL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "coctails", ()=>coctails);
+const ingredientsColors = {
+    "whiteRum": "F5F5F5",
+    "sodaWater": "F8F8F8",
+    "limeJuice": "63E211",
+    "pineappleJuice": "F8CA0F",
+    "coconutCream": "E6DFC3",
+    "espresso": "462B02",
+    "bourbon": "CB7A00",
+    "syrup": "6C470F"
+};
+const coctails = [];
+class Coctail {
+    constructor(name, imageSource, description, glass, mainIngredients, extraIngredients){
+        this.name = name;
+        this.imageSource = imageSource;
+        this.description = description;
+        this.glass = glass;
+        this.mainIngredients = mainIngredients;
+        this.extraIngredients = extraIngredients;
     }
-});
+}
+coctails.push(new Coctail("Mojito", "./coctails/mojito.jpg", "Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water", "highGlass", [
+    [
+        "Soda Water",
+        ingredientsColors.sodaWater,
+        50
+    ],
+    [
+        "White Rum",
+        ingredientsColors.whiteRum,
+        35
+    ],
+    [
+        "Lime Juice",
+        ingredientsColors.limeJuice,
+        15
+    ]
+], [
+    "1 tsp granulated sugar",
+    "10 fresh mint leaves",
+    "Ice cubes"
+]));
+coctails.push(new Coctail("Old Fashioned", "./coctails/old-fashioned.jpg", "Try this twist on an old fashioned cocktail, with a double shot of espresso accompanying the classic flavours of bourbon and Angostura bitters", "oldGlass", [
+    [
+        "Double shot espresso",
+        ingredientsColors.espresso,
+        50
+    ],
+    [
+        "Bourbon",
+        ingredientsColors.bourbon,
+        40
+    ],
+    [
+        "Brown-sugar Syrup",
+        ingredientsColors.syrup,
+        10
+    ]
+], [
+    "2 dashes Angostura bitters",
+    "orange zest"
+]));
+coctails.push(new Coctail("Pina Colada", "./coctails/pina-colada.jpg", "A tropical blend of rich coconut cream, white rum and tangy pineapple – serve with an umbrella for kitsch appeal", "highGlass", [
+    [
+        "Pineaplle Juice",
+        ingredientsColors.pineappleJuice,
+        50
+    ],
+    [
+        "White Rum",
+        ingredientsColors.whiteRum,
+        25
+    ],
+    [
+        "Coconut Cream",
+        ingredientsColors.coconutCream,
+        25
+    ]
+], [
+    "wedge of pineapple"
+]));
 
-},{"./coctail-creator.js":"aOTjL"}]},["7QhWD","7SwCM"], "7SwCM", "parcelRequire4dac")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-//# sourceMappingURL=index.f18de3a7.js.map
+},{}]},["jYNsX","aOTjL"], "aOTjL", "parcelRequire4dac")
+
+//# sourceMappingURL=index.ae24fa8e.js.map

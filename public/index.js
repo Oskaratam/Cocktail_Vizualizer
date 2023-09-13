@@ -4,12 +4,20 @@
 3.create function to set a coctail by ingredient count and size
 */
 
+import { coctails } from "./coctail-creator.js";
+
 
 const searchIcon = document.querySelector('#searchIcon'),
     searchInput = document.querySelector('#searchInput'),
     coctailName = document.querySelector('[data-coctail-name]'),
-    coctailDescription = document.querySelector('[data-coctail-description]');
+    coctailDescription = document.querySelector('[data-coctail-description]'),
+    coctailMenu = document.querySelector('#coctailMenu');
 
+
+
+
+    
+//SEARCH A DRINK
 searchIcon.addEventListener('click', async() => {
     const search = searchInput.value;
     const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${search}`;
