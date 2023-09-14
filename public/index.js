@@ -13,7 +13,7 @@ const searchIcon = document.querySelector('#searchIcon'),
     searchInput = document.querySelector('#searchInput'),
     coctailNameMain = document.querySelector('[data-coctail-name]'),
     coctailDescription = document.querySelector('[data-coctail-description]'),
-    coctailMenu = document.querySelector('#coctailMenu');
+    ingredientList = document.querySelector('#ingredientList');
 
 
 //SET MAIN INFO 
@@ -44,9 +44,6 @@ const setCoctail = (coctail) => {
             })
         }
 
-
-
-
         for (let i = 0; i < coctail.mainIngredients.length; i++) {
             const ingredientBox = document.createElement('div');
             ingredientBox.classList.add('ingredientBox');
@@ -66,17 +63,34 @@ const setCoctail = (coctail) => {
         }
 
 
+        //Set ingredients
 
+        if (document.querySelectorAll('.ingredientListItem').length >= 1) {
+            document.querySelectorAll('.ingredientListItem').forEach(item => {
+                item.remove();
+            })
+        }
 
+        for(let i = 0; i < coctail.mainIngredients.length; i++) {
+            const ingredientListItem = document.createElement('h4');
+            ingredientListItem.classList.add('ingredientListItem');
+            ingredientListItem.innerHTML = `${coctail.mainIngredients[i][0]} / ${coctail.mainIngredients[i][2]}%`;
+
+            ingredientList.appendChild(ingredientListItem);
+        }
+
+        for(let i = 0; i < coctail.extraIngredients.length; i++) {
+            const ingredientListItem = document.createElement('h4');
+            ingredientListItem.classList.add('ingredientListItem');
+            ingredientListItem.innerHTML = coctail.extraIngredients[i];
+
+            ingredientList.appendChild(ingredientListItem);
+        }
 }
 
 
 
     
-
-
-
-
 //SEARCH A DRINK
 searchIcon.addEventListener('click', async() => {
     const search = searchInput.value;

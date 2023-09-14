@@ -584,7 +584,7 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setCoctail", ()=>setCoctail);
 var _coctailCreatorJs = require("./coctail-creator.js");
-const searchIcon = document.querySelector("#searchIcon"), searchInput = document.querySelector("#searchInput"), coctailNameMain = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), coctailMenu = document.querySelector("#coctailMenu");
+const searchIcon = document.querySelector("#searchIcon"), searchInput = document.querySelector("#searchInput"), coctailNameMain = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), ingredientList = document.querySelector("#ingredientList");
 //SET MAIN INFO 
 const setCoctail = (coctail)=>{
     coctailNameMain.innerHTML = coctail.name;
@@ -617,6 +617,22 @@ const setCoctail = (coctail)=>{
         ingredientName.innerHTML = coctail.mainIngredients[i][0];
         ingredientBox.appendChild(ingredientName);
         ingredientBox.style.backgroundColor = `#${coctail.mainIngredients[i][1]}`;
+    }
+    //Set ingredients
+    if (document.querySelectorAll(".ingredientListItem").length >= 1) document.querySelectorAll(".ingredientListItem").forEach((item)=>{
+        item.remove();
+    });
+    for(let i = 0; i < coctail.mainIngredients.length; i++){
+        const ingredientListItem = document.createElement("h4");
+        ingredientListItem.classList.add("ingredientListItem");
+        ingredientListItem.innerHTML = `${coctail.mainIngredients[i][0]} / ${coctail.mainIngredients[i][2]}%`;
+        ingredientList.appendChild(ingredientListItem);
+    }
+    for(let i = 0; i < coctail.extraIngredients.length; i++){
+        const ingredientListItem = document.createElement("h4");
+        ingredientListItem.classList.add("ingredientListItem");
+        ingredientListItem.innerHTML = coctail.extraIngredients[i];
+        ingredientList.appendChild(ingredientListItem);
     }
 };
 //SEARCH A DRINK

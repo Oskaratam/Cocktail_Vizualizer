@@ -31,6 +31,10 @@ const renderMenu = () => {
 }
 renderMenu();
 
+
+
+
+
 /* Coctail {name: 'Mojito', imageSoure: './img/coctails/mojito.jpg', description: 'Mix this classic cocktail for a party using fresh …ite rum, sugar, zesty lime and cooling soda water', glass: 'highGlass', mainIngredients: Array(3), …}
 description
 : 

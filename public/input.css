@@ -49,9 +49,15 @@ h3 {
 }
 
 #coctailMenu::-webkit-scrollbar {
-    width:10%;
-    color:black;
+    width:10px;
+    height: 0.75rem;
+    cursor: pointer;
 }
+
+#coctailMenu::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+  }
 
 .coctailImage {
     position: absolute;
@@ -60,6 +66,7 @@ h3 {
     height: 100%;
     border-radius:15%;
 }
+
 
 
 /*GLASSES*/
@@ -102,6 +109,7 @@ h3 {
 #arrow1 {
     transform: rotate(-130deg);
     left: 17%;
+    width: 33%;
 }
 
 
@@ -118,4 +126,16 @@ h3 {
 
 :where(#coctailContent3) .ingredientName {
     margin-right: 5%;
+}
+
+/*INGREDIENT LIST*/
+
+.ingredientListItem {
+    /*color: rgb(190, 24, 93);*/
+    color: grey;
+    font-size: 1.5rem;
+    text-wrap:nowrap;
+    margin-bottom: 6%;
+    padding-bottom: 2%;
+    border-bottom: 3px dotted grey;
 }
