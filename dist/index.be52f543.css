@@ -241,10 +241,6 @@ img, video {
   --tw-backdrop-sepia: ;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .invisible {
   visibility: hidden;
 }
@@ -392,6 +388,10 @@ img, video {
   flex-direction: column;
 }
 
+.flex-col-reverse {
+  flex-direction: column-reverse;
+}
+
 .justify-end {
   justify-content: flex-end;
 }
@@ -435,11 +435,6 @@ img, video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-yellow-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 224 71 / var(--tw-bg-opacity));
-}
-
 .p-2 {
   padding: .5rem;
 }
@@ -459,13 +454,24 @@ img, video {
   line-height: 2.5rem;
 }
 
-.text-7xl {
-  font-size: 4.5rem;
+.text-8xl {
+  font-size: 6rem;
   line-height: 1;
 }
 
 .font-semibold {
   font-weight: 600;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter, backdrop-filter;
+  transition-duration: .15s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
 @font-face {
@@ -499,7 +505,7 @@ h3 {
 
 .menuItem {
   cursor: pointer;
-  background-color: #ff0;
+  background-color: #000;
   border: 0 solid green;
   border-radius: 15%;
   width: 17.3%;
@@ -512,7 +518,7 @@ h3 {
 }
 
 .menuItemPicked {
-  border: .2vw solid #ff0;
+  border: .2vw solid #cece05;
 }
 
 #coctailMenu::-webkit-scrollbar {
@@ -566,6 +572,19 @@ h3 {
 #arrow1 {
   left: 17%;
   transform: rotate(-130deg);
+}
+
+.ingredientBox {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 0%;
+  transition: height 4s;
+  display: flex;
+}
+
+:where(#coctailContent3) .ingredientName {
+  margin-right: 5%;
 }
 
 /*# sourceMappingURL=index.be52f543.css.map */

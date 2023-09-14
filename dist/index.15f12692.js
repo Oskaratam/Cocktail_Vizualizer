@@ -575,30 +575,26 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"5NRZg":[function(require,module,exports) {
 var _coctailCreatorJs = require("./coctail-creator.js");
+var _indexJs = require("./index.js");
 const coctailNameMain = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), coctailMenu = document.querySelector("#coctailMenu");
-for(let i = 0; i < (0, _coctailCreatorJs.coctails).length; i++){
-    const coctail = (0, _coctailCreatorJs.coctails)[i];
-    const menuItem = document.createElement("div");
-    const coctailImage = document.createElement("img");
-    menuItem.classList.add("menuItem");
-    coctailImage.classList.add("coctailImage");
-    coctailImage.setAttribute("src", coctail.imageSource);
-    coctailMenu.appendChild(menuItem);
-    menuItem.appendChild(coctailImage);
-    menuItem.addEventListener("click", ()=>{
-        if (document.querySelectorAll(".menuItemPicked").length >= 1) document.querySelector(".menuItemPicked").classList.remove("menuItemPicked");
-        menuItem.classList.add("menuItemPicked");
-        coctailNameMain.innerHTML = coctail.name;
-        coctailDescription.innerHTML = coctail.description;
-        document.querySelectorAll('[data-type-content="coctail"]').forEach((content)=>{
-            content.classList.add("invisible");
+const renderMenu = ()=>{
+    for(let i = 0; i < (0, _coctailCreatorJs.coctails).length; i++){
+        const coctail = (0, _coctailCreatorJs.coctails)[i];
+        const menuItem = document.createElement("div");
+        const coctailImage = document.createElement("img");
+        menuItem.classList.add("menuItem");
+        coctailImage.classList.add("coctailImage");
+        coctailImage.setAttribute("src", coctail.imageSource);
+        coctailMenu.appendChild(menuItem);
+        menuItem.appendChild(coctailImage);
+        menuItem.addEventListener("click", ()=>{
+            if (document.querySelectorAll(".menuItemPicked").length >= 1) document.querySelector(".menuItemPicked").classList.remove("menuItemPicked");
+            menuItem.classList.add("menuItemPicked");
+            (0, _indexJs.setCoctail)(coctail);
         });
-        document.querySelectorAll('[data-type-image="coctail"]').forEach((content)=>{
-            content.classList.add("invisible");
-        });
-        document.getElementById(`${coctail.glass}`).classList.remove("invisible");
-    });
-} /* Coctail {name: 'Mojito', imageSoure: './img/coctails/mojito.jpg', description: 'Mix this classic cocktail for a party using fresh …ite rum, sugar, zesty lime and cooling soda water', glass: 'highGlass', mainIngredients: Array(3), …}
+    }
+};
+renderMenu(); /* Coctail {name: 'Mojito', imageSoure: './img/coctails/mojito.jpg', description: 'Mix this classic cocktail for a party using fresh …ite rum, sugar, zesty lime and cooling soda water', glass: 'highGlass', mainIngredients: Array(3), …}
 description
 : 
 "Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water"
@@ -635,6 +631,6 @@ name
 
 */ 
 
-},{"./coctail-creator.js":"aOTjL"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
+},{"./coctail-creator.js":"aOTjL","./index.js":"7SwCM"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
 
 //# sourceMappingURL=index.15f12692.js.map

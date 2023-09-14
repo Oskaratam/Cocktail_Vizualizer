@@ -585,7 +585,12 @@ const ingredientsColors = {
     "coconutCream": "E6DFC3",
     "espresso": "462B02",
     "bourbon": "CB7A00",
-    "syrup": "6C470F"
+    "syrup": "6C470F",
+    "berries": "7F0CCF",
+    "raspberryLiqueur": "A40721",
+    "lemonJuice": "FFFB83",
+    "blueCuracao": "6B6CCC",
+    "vodka": "FCF9F5"
 };
 const coctails = [];
 class Coctail {
@@ -657,6 +662,36 @@ coctails.push(new Coctail("Pina Colada", "./coctails/pina-colada.jpg", "A tropic
     ]
 ], [
     "wedge of pineapple"
+]));
+coctails.push(new Coctail("Witch's Brew", "./coctails/witch.jpg", "Get some berries bubbling in your cauldron and add some edible glitter to this spooky purple cocktail, made with vodka, liqueur and curacao", "coctailGlass", [
+    [
+        "Vodka",
+        ingredientsColors.vodka,
+        30
+    ],
+    [
+        " Raspberry Liqueur",
+        ingredientsColors.raspberryLiqueur,
+        25
+    ],
+    [
+        "Lemon Juice",
+        ingredientsColors.lemonJuice,
+        20
+    ],
+    [
+        "Cooked Berries",
+        ingredientsColors.berries,
+        15
+    ],
+    [
+        "Blue Curacao",
+        ingredientsColors.blueCuracao,
+        10
+    ]
+], [
+    "4 cocktail cherries",
+    "ice"
 ]));
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
