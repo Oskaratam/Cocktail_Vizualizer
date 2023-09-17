@@ -39,27 +39,27 @@ h3 {
     border-radius: 15%;
     width: 17.3%;
     height: 90%;
-    border: 0 solid green;
+    border: 0 solid;
     box-shadow: 0 0 30px grey;
     transition: border 0.3s;
 }
 
 .menuItemPicked {
-    border: 0.2vw solid rgb(206, 206, 5);
+    border: 0.2vw solid white;
 }
 
-#coctailMenu::-webkit-scrollbar {
+#cocktailMenu::-webkit-scrollbar {
     width:10px;
     height: 0.75rem;
     cursor: pointer;
 }
 
-#coctailMenu::-webkit-scrollbar-thumb {
+#cocktailMenu::-webkit-scrollbar-thumb {
     background: white;
     border-radius: 5px;
   }
 
-.coctailImage {
+.cocktailImage {
     position: absolute;
     z-index: 0;
     width: 100%;
@@ -70,12 +70,12 @@ h3 {
 
 
 /*GLASSES*/
-#coctailGlass {
+#cocktailGlass {
     top: 15%;
     right: 29.2%;
 }
 
-#coctailContent1 {
+#cocktailContent1 {
     height:23%;
     margin-top: 20vh;
     clip-path: polygon(16% 0%, 33% 70%, 46% 100%, 54% 100%, 73% 50%, 84% 0%);
@@ -87,7 +87,7 @@ h3 {
     width: 20%;
 }
 
-#coctailContent2 {
+#cocktailContent2 {
     height: 60%;
     margin-top: 20vh;
     clip-path: polygon(25.1% 0%, 74.3% 0%, 67% 140%, 32% 100%);
@@ -100,7 +100,7 @@ h3 {
 
 }
 
-#coctailContent3 {
+#cocktailContent3 {
     height: 25%;
     margin-top: 33vh;
     clip-path: polygon(21% 0%, 73% 0%, 71% 100%, 23% 100%);
@@ -124,7 +124,7 @@ h3 {
     transition: height 4s;
 }
 
-:where(#coctailContent3) .ingredientName {
+:where(#cocktailContent3) .ingredientName {
     margin-right: 5%;
 }
 

@@ -8,44 +8,53 @@
 </head>
 <body>
     <main class="relative flex bg-white homepage">
-        <section class="w-7/12 h-full bg-pink-700 coctails">
+        <section class="relative w-7/12 h-full overflow-hidden bg-pink-700 coctails">
 
-            <div class="relative flex flex-col justify-end w-8/12 h-2/5 top-32 left-1/4 coctailDescription">
-                <h3 class="relative mb-5 text-white text-8xl" data-coctail-name>Coctail Name</h3>
-                <article class="w-5/6 text-3xl text-white max-h-36 line-clamp-6" data-coctail-description> This is short coctail description which will be here when i will pull up data from an api</article>
+            <nav class="absolute flex w-full h-20 gap-20 text-2xl text-white align-middle left-40">
+                <img class="absolute w-10 h-8 top-6 left-14" src="./img/18+.png">
+                <button class="duration-200 hover:text-black" id="alcoButton">Alco</button>
+                <button class="duration-200 hover:text-black"  id="alcoFreeButton">Alco-free</button>
+            </nav>
+            
+            
+
+            <div class="relative flex flex-col justify-end w-8/12 h-2/5 top-32 left-1/4 cocktailDescription">
+                <h3 class="relative mb-5 text-white text-8xl" data-cocktail-name>Cocktail Name</h3>
+                <article class="w-5/6 text-3xl text-white max-h-36 line-clamp-6" data-cocktail-description> This is short coctail description which will be here when i will pull up data from an api</article>
             </div>
 
             <div class="relative flex flex-col w-6/6 h-1/4 top-1/3">
                 <h3 class="relative ml-24 text-4xl font-semibold text-white left-1/4">Pick a coctail</h3>
-                <div class="box-border w-5/6 h-full mt-5 overflow-x-auto whitespace-nowrap" id="coctailMenu">
+                <div class="box-border w-5/6 h-full mt-5 overflow-x-auto whitespace-nowrap" id="cocktailMenu">
                 </div>
             </div>
         </section>
 
         
-        <div class="absolute flex flex-col-reverse invisible w-4/12 right-1/4 h-4/5"  id="coctailContent1" data-type-content="coctail">
+        <div class="absolute flex flex-col-reverse invisible w-4/12 right-1/4 h-4/5"  id="cocktailContent1" data-type-content="cocktail">
         </div>
-        <div class="absolute flex flex-col-reverse invisible w-4/12 right-1/4" id="coctailContent2" data-type-content="coctail">
+        <div class="absolute flex flex-col-reverse invisible w-4/12 right-1/4" id="cocktailContent2" data-type-content="cocktail">
         </div>
-        <div class="absolute flex flex-col-reverse invisible w-4/12 right-1/4 h-5/6" id="coctailContent3" data-type-content="coctail"></div>
+        <div class="absolute flex flex-col-reverse invisible w-4/12 right-1/4 h-5/6" id="cocktailContent3" data-type-content="cocktail"></div>
 
 
 
-        <img class="absolute invisible w-3/12 bg-transparent min-w-3/12 min-h-4/5 h-4/5" id="coctailGlass" data-type-image="coctail" data-inside="coctailContent1" src="./img/glass.png" alt="Coctail glass">
-        <img class="absolute invisible bg-transparent min-w-2/12 min-h-4/5 h-4/5" id="highGlass" data-type-image="coctail" data-inside="coctailContent2" src="../public/img/highballGlass.png" alt="High glass">
-        <img class="absolute invisible w-3/12 bg-transparent min-w-2/12 min-h-4/5 h-2/5"   id="oldGlass" data-type-image="coctail" data-inside="coctailContent3" src="../public/img/oldGlass.png" alt="Old Glass">
+        <img class="absolute invisible w-3/12 bg-transparent h-4/5" id="cocktailGlass" data-type-image="cocktail" data-inside="cocktailContent1" src="./img/glass.png" alt="Coctail glass">
+        <img class="absolute invisible bg-transparent h-4/5" id="highGlass" data-type-image="cocktail" data-inside="cocktailContent2" src="../public/img/highballGlass.png" alt="High glass">
+        <img class="absolute invisible w-3/12 bg-transparent h-2/5"   id="oldGlass" data-type-image="cocktail" data-inside="cocktailContent3" src="../public/img/oldGlass.png" alt="Old Glass">
 
 
 
 
 
-        <section class="flex flex-col w-5/12 mt-5 bg-white h-5/6 ">
-            <div class="relative flex self-end w-2/3 h-40" id="searchBar">
-                <input class="w-3/5 p-2 text-2xl border-2 border-black rounded-xl h-2/6"  id="searchInput"  type="text" placeholder="Find a coctail">
-                <img class="relative w-2/12 h-2/6 -top-0.5 cursor-pointer" src="./img/search.png" alt="search" id="searchIcon">    
+        <section class="flex flex-col w-5/12 h-full mt-5 bg-white">
+            <div class="relative flex self-end mr-20 border-2 border-black w-96 h-14 rounded-2xl" id="searchBar">
+                <input class="w-full max-w-xs p-2 mt-2 text-2xl bg-transparent outline-none h-3/4 focus:border-none"  id="searchInput"  type="text" placeholder="Find a coctail">
+                <div class="absolute z-0 w-16 h-full ml-8 bg-pink-700 rounded-2xl left-72"></div>
+                <img class="absolute h-12 ml-2 cursor-pointer w-28 z-1 left-72 " src="./img/search.png" alt="search" id="searchIcon">    
             </div>
-            <img class="relative w-2/5 right-5 bottom-1/4 top-1/3 h-1/4" src="../public/img/arrow.png" alt="arrow" id="arrow1">
 
+            <img class="relative w-2/5 right-5 bottom-1/4 top-1/3 h-1/4" src="../public/img/arrow.png" alt="arrow" id="arrow1">
             <div class="relative self-end w-5/12 mb-16 mr-9 h-5/6" id="ingredientList">  
             </div>
         </section>

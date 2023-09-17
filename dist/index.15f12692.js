@@ -574,63 +574,45 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"5NRZg":[function(require,module,exports) {
-var _coctailCreatorJs = require("./coctail-creator.js");
+var _cocktailCreatorJs = require("./cocktail-creator.js");
 var _indexJs = require("./index.js");
-const coctailNameMain = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), coctailMenu = document.querySelector("#coctailMenu");
-const renderMenu = ()=>{
-    for(let i = 0; i < (0, _coctailCreatorJs.coctails).length; i++){
-        const coctail = (0, _coctailCreatorJs.coctails)[i];
+const cocktailNameMain = document.querySelector("[data-cocktail-name]"), cocktailDescription = document.querySelector("[data-cocktail-description]"), cocktailMenu = document.querySelector("#cocktailMenu"), alcoFreeButton = document.querySelector("#alcoFreeButton"), alcoButton = document.querySelector("#alcoButton");
+const renderMenu = (cocktailsList)=>{
+    for(let i = 0; i < cocktailsList.length; i++){
+        const cocktail = cocktailsList[i];
         const menuItem = document.createElement("div");
-        const coctailImage = document.createElement("img");
+        const cocktailImage = document.createElement("img");
         menuItem.classList.add("menuItem");
-        coctailImage.classList.add("coctailImage");
-        coctailImage.setAttribute("src", coctail.imageSource);
-        coctailMenu.appendChild(menuItem);
-        menuItem.appendChild(coctailImage);
+        cocktailImage.classList.add("cocktailImage");
+        cocktailImage.setAttribute("src", cocktail.imageSource);
+        cocktailMenu.appendChild(menuItem);
+        menuItem.appendChild(cocktailImage);
         menuItem.addEventListener("click", ()=>{
             if (document.querySelectorAll(".menuItemPicked").length >= 1) document.querySelector(".menuItemPicked").classList.remove("menuItemPicked");
             menuItem.classList.add("menuItemPicked");
-            (0, _indexJs.setCoctail)(coctail);
+            (0, _indexJs.setCocktail)(cocktail);
         });
     }
 };
-renderMenu(); /* Coctail {name: 'Mojito', imageSoure: './img/coctails/mojito.jpg', description: 'Mix this classic cocktail for a party using fresh …ite rum, sugar, zesty lime and cooling soda water', glass: 'highGlass', mainIngredients: Array(3), …}
-description
-: 
-"Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water"
-extraIngredients
-: 
-(3) ['1 tsp granulated sugar', '10 fresh mint leaves', 'Ice cubes']
-glass
-: 
-"highGlass"
-imageSoure
-: 
-"./img/mojito.jpg"
-mainIngredients
-: 
-Array(3)
-0
-: 
-(3) ['Soda Water', 'F8F8F8', 50]
-1
-: 
-(3) ['White Rum', 'F5F5F5', 35]
-2
-: 
-(3) ['Lime Juice', '63E211', 15]
-length
-: 
-3
-[[Prototype]]
-: 
-Array(0)
-name
-: 
-"Mojito"
+renderMenu((0, _cocktailCreatorJs.cocktails));
+const deleteMenu = ()=>{
+    document.querySelectorAll(".menuItem").forEach((item)=>{
+        item.remove();
+    });
+};
+alcoFreeButton.addEventListener("click", ()=>{
+    deleteMenu();
+    renderMenu((0, _cocktailCreatorJs.cocktails2));
+    (0, _indexJs.setCocktail)((0, _cocktailCreatorJs.cocktails2)[0]);
+    document.querySelector(".menuItem").classList.add("menuItemPicked");
+});
+alcoButton.addEventListener("click", ()=>{
+    deleteMenu();
+    renderMenu((0, _cocktailCreatorJs.cocktails));
+    (0, _indexJs.setCocktail)((0, _cocktailCreatorJs.cocktails)[0]);
+    document.querySelector(".menuItem").classList.add("menuItemPicked");
+});
 
-*/ 
-
-},{"./coctail-creator.js":"aOTjL","./index.js":"7SwCM"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
+},{"./cocktail-creator.js":"1gZ06","./index.js":"7SwCM"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
 
 //# sourceMappingURL=index.15f12692.js.map

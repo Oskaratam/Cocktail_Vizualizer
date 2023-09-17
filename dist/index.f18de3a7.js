@@ -582,56 +582,56 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 5.delete all divs before setting again
 */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "setCoctail", ()=>setCoctail);
-var _coctailCreatorJs = require("./coctail-creator.js");
-const searchIcon = document.querySelector("#searchIcon"), searchInput = document.querySelector("#searchInput"), coctailNameMain = document.querySelector("[data-coctail-name]"), coctailDescription = document.querySelector("[data-coctail-description]"), ingredientList = document.querySelector("#ingredientList");
+parcelHelpers.export(exports, "setCocktail", ()=>setCocktail);
+var _cocktailCreatorJs = require("./cocktail-creator.js");
+const searchIcon = document.querySelector("#searchIcon"), searchInput = document.querySelector("#searchInput"), cocktailNameMain = document.querySelector("[data-cocktail-name]"), cocktailDescription = document.querySelector("[data-cocktail-description]"), ingredientList = document.querySelector("#ingredientList");
 //SET MAIN INFO 
-const setCoctail = (coctail)=>{
-    coctailNameMain.innerHTML = coctail.name;
-    coctailDescription.innerHTML = coctail.description;
-    document.querySelectorAll('[data-type-content="coctail"]').forEach((content)=>{
+const setCocktail = (cocktail)=>{
+    cocktailNameMain.innerHTML = cocktail.name;
+    cocktailDescription.innerHTML = cocktail.description;
+    document.querySelectorAll('[data-type-content="cocktail"]').forEach((content)=>{
         content.classList.add("invisible");
     });
-    document.querySelectorAll('[data-type-image="coctail"]').forEach((content)=>{
+    document.querySelectorAll('[data-type-image="cocktail"]').forEach((content)=>{
         content.classList.add("invisible");
     });
-    const glass = document.getElementById(`${coctail.glass}`);
+    const glass = document.getElementById(`${cocktail.glass}`);
     glass.classList.remove("invisible");
     const glassContent = document.getElementById(glass.dataset.inside);
     glassContent.classList.remove("invisible");
-    console.log(coctail.mainIngredients[0]);
+    console.log(cocktail.mainIngredients[0]);
     //Main animation
     if (document.querySelectorAll(".ingredientBox").length >= 1) document.querySelectorAll(".ingredientBox").forEach((box)=>{
         box.remove();
     });
-    for(let i = 0; i < coctail.mainIngredients.length; i++){
+    for(let i = 0; i < cocktail.mainIngredients.length; i++){
         const ingredientBox = document.createElement("div");
         ingredientBox.classList.add("ingredientBox");
         glassContent.appendChild(ingredientBox);
         setTimeout(()=>{
             ingredientBox.style.transition = "height 1.5s";
-            ingredientBox.style.height = `${coctail.mainIngredients[i][2]}%`;
+            ingredientBox.style.height = `${cocktail.mainIngredients[i][2]}%`;
         }, 100);
         const ingredientName = document.createElement("h5");
         ingredientName.classList.add("ingredientName");
-        ingredientName.innerHTML = coctail.mainIngredients[i][0];
+        ingredientName.innerHTML = cocktail.mainIngredients[i][0];
         ingredientBox.appendChild(ingredientName);
-        ingredientBox.style.backgroundColor = `#${coctail.mainIngredients[i][1]}`;
+        ingredientBox.style.backgroundColor = `#${cocktail.mainIngredients[i][1]}`;
     }
     //Set ingredients
     if (document.querySelectorAll(".ingredientListItem").length >= 1) document.querySelectorAll(".ingredientListItem").forEach((item)=>{
         item.remove();
     });
-    for(let i = 0; i < coctail.mainIngredients.length; i++){
+    for(let i = 0; i < cocktail.mainIngredients.length; i++){
         const ingredientListItem = document.createElement("h4");
         ingredientListItem.classList.add("ingredientListItem");
-        ingredientListItem.innerHTML = `${coctail.mainIngredients[i][0]} / ${coctail.mainIngredients[i][2]}%`;
+        ingredientListItem.innerHTML = `${cocktail.mainIngredients[i][0]} / ${cocktail.mainIngredients[i][2]}%`;
         ingredientList.appendChild(ingredientListItem);
     }
-    for(let i = 0; i < coctail.extraIngredients.length; i++){
+    for(let i = 0; i < cocktail.extraIngredients.length; i++){
         const ingredientListItem = document.createElement("h4");
         ingredientListItem.classList.add("ingredientListItem");
-        ingredientListItem.innerHTML = coctail.extraIngredients[i];
+        ingredientListItem.innerHTML = cocktail.extraIngredients[i];
         ingredientList.appendChild(ingredientListItem);
     }
 };
@@ -647,13 +647,13 @@ searchIcon.addEventListener("click", async ()=>{
         else {
             const coctail = data.drinks[0];
             coctailName.innerHTML = coctail.strDrink;
-            coctailDescription.innerHTML = coctail.strInstructions;
+            cocktailDescription.innerHTML = coctail.strInstructions;
         }
     } catch (error) {
         console.error(error);
     }
 });
 
-},{"./coctail-creator.js":"aOTjL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7QhWD","7SwCM"], "7SwCM", "parcelRequire4dac")
+},{"./cocktail-creator.js":"1gZ06","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7QhWD","7SwCM"], "7SwCM", "parcelRequire4dac")
 
 //# sourceMappingURL=index.f18de3a7.js.map

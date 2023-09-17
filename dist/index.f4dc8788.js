@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="/index.f4dc8788.js" defer=""></script>
-    <script src="/index.f18de3a7.js" defer=""></script>
-    <script src="/index.15f12692.js" defer=""></script>
-    <link rel="stylesheet" href="/index.be52f543.css">
-    <title>Cocktail View</title>
-</head>
-<body>
-    <div id="target"></div>
-    <script>// modules are defined as an array
+// modules are defined as an array
 // [ module function, map of requires ]
 //
 // map of requires is short require name -> numeric require
@@ -155,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"jKXIO":[function(require,module,exports) {
+})({"fFtTY":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "07de2c2a94baed26";
+module.bundle.HMR_BUNDLE_ID = "c4f12de5f4dc8788";
 "use strict";
 /* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser, __parcel__import__, __parcel__importScripts__, ServiceWorkerGlobalScope */ /*::
 import type {
@@ -586,19 +573,172 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"bYQxT":[function(require,module,exports) {
+},{}],"1gZ06":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _contentHtml = require("bundle-text:./content.html");
-var _contentHtmlDefault = parcelHelpers.interopDefault(_contentHtml);
-const importedHtmlContainer = document.createElement("div");
-importedHtmlContainer.innerHTML = (0, _contentHtmlDefault.default);
-const targetElement = document.getElementById("target");
-targetElement.appendChild(importedHtmlContainer);
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cocktails", ()=>cocktails);
+parcelHelpers.export(exports, "cocktails2", ()=>cocktails2);
+const ingredientsColors = {
+    "whiteRum": "F5F5F5",
+    "sodaWater": "F8F8F8",
+    "limeJuice": "63E211",
+    "pineappleJuice": "F8CA0F",
+    "coconutCream": "E6DFC3",
+    "espresso": "462B02",
+    "bourbon": "CB7A00",
+    "syrup": "6C470F",
+    "berries": "7F0CCF",
+    "raspberryLiqueur": "A40721",
+    "lemonJuice": "FFFB83",
+    "blueCuracao": "6B6CCC",
+    "vodka": "FCF9F5",
+    "coffeeLiquer": "381B01",
+    "orangeJuice": "FF8B16"
+};
+const cocktails = [], cocktails2 = [];
+class Cocktail {
+    constructor(name, imageSource, description, glass, mainIngredients, extraIngredients){
+        this.name = name;
+        this.imageSource = imageSource;
+        this.description = description;
+        this.glass = glass;
+        this.mainIngredients = mainIngredients;
+        this.extraIngredients = extraIngredients;
+    }
+}
+cocktails.push(new Cocktail("Old Fashioned", "./cocktails/old-fashioned.jpg", "Try this twist on an old fashioned cocktail, with a double shot of espresso accompanying the classic flavours of bourbon and Angostura bitters", "oldGlass", [
+    [
+        "Double shot espresso",
+        ingredientsColors.espresso,
+        50
+    ],
+    [
+        "Bourbon",
+        ingredientsColors.bourbon,
+        40
+    ],
+    [
+        "Brown-sugar Syrup",
+        ingredientsColors.syrup,
+        10
+    ]
+], [
+    "2 dashes Angostura bitters",
+    "Orange zest"
+]));
+cocktails.push(new Cocktail("Pina Colada", "./coctails/pina-colada.jpg", "A tropical blend of rich coconut cream, white rum and tangy pineapple – serve with an umbrella for kitsch appeal", "highGlass", [
+    [
+        "Pineaplle Juice",
+        ingredientsColors.pineappleJuice,
+        50
+    ],
+    [
+        "White Rum",
+        ingredientsColors.whiteRum,
+        25
+    ],
+    [
+        "Coconut Cream",
+        ingredientsColors.coconutCream,
+        25
+    ]
+], [
+    "Wedge of pineapple"
+]));
+cocktails.push(new Cocktail("Witch's Brew", "./cocktails/witch.jpg", "Get some berries bubbling in your cauldron and add some edible glitter to this spooky purple cocktail, made with vodka, liqueur and curacao", "cocktailGlass", [
+    [
+        "Vodka",
+        ingredientsColors.vodka,
+        30
+    ],
+    [
+        " Raspberry Liqueur",
+        ingredientsColors.raspberryLiqueur,
+        25
+    ],
+    [
+        "Lemon Juice",
+        ingredientsColors.lemonJuice,
+        20
+    ],
+    [
+        "Cooked Berries",
+        ingredientsColors.berries,
+        15
+    ],
+    [
+        "Blue Curacao",
+        ingredientsColors.blueCuracao,
+        10
+    ]
+], [
+    "4 cocktail cherries"
+]));
+cocktails.push(new Cocktail("Mojito", "./cocktails/mojito.jpg", "Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water", "highGlass", [
+    [
+        "Soda Water",
+        ingredientsColors.sodaWater,
+        50
+    ],
+    [
+        "White Rum",
+        ingredientsColors.whiteRum,
+        35
+    ],
+    [
+        "Lime Juice",
+        ingredientsColors.limeJuice,
+        15
+    ]
+], [
+    "1 tsp granulated sugar",
+    "10 fresh mint leaves",
+    "Ice cubes"
+]));
+cocktails.push(new Cocktail("Espresso Martini", "./cocktails/espresso-martini.jpg", "Learn how to make this classic coffee cocktail. Our easy recipe uses freshly brewed espresso, a dash of coffee liqueur and a simple sugar syrup.", "cocktailGlass", [
+    [
+        "Vodka",
+        ingredientsColors.vodka,
+        33
+    ],
+    [
+        "Sugar Syrup",
+        ingredientsColors.syrup,
+        33
+    ],
+    [
+        "Espresso",
+        ingredientsColors.espresso,
+        17
+    ],
+    [
+        "Coffee liquer",
+        ingredientsColors.coffeeLiquer,
+        17
+    ]
+], [
+    "Ice"
+]));
+///////////////////////////////////////////////////////////////
+cocktails2.push(new Cocktail("Fruity mocktail", "./cocktails/fruity.jpg", "Make this fruit-flavoured mocktail with grenadine and orange juice to serve as a non-alcoholic drink option at a family party. It's more fun with grape and blueberry stirrers that double as a snack", "highGlass", [
+    [
+        "Orange Juice",
+        ingredientsColors.orangeJuice,
+        70
+    ],
+    [
+        "Grenadine",
+        ingredientsColors.raspberryLiqueur,
+        20
+    ],
+    [
+        "Sparkling Water",
+        ingredientsColors.sodaWater,
+        10
+    ]
+], []));
 
-},{"bundle-text:./content.html":"4gEyX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4gEyX":[function(require,module,exports) {
-module.exports = "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" href=\"/index.be52f543.css\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n    <main class=\"relative flex bg-white homepage\">\r\n        <section class=\"relative w-7/12 h-full overflow-hidden bg-pink-700 coctails\">\r\n\r\n            <nav class=\"absolute flex w-full h-20 gap-20 text-2xl text-white align-middle left-40\">\r\n                <img class=\"absolute w-10 h-8 top-6 left-14\" src=\"/18+.0964152f.png\">\r\n                <button class=\"duration-200 hover:text-black\" id=\"alcoButton\">Alco</button>\r\n                <button class=\"duration-200 hover:text-black\" id=\"alcoFreeButton\">Alco-free</button>\r\n            </nav>\r\n            \r\n            \r\n\r\n            <div class=\"relative flex flex-col justify-end w-8/12 h-2/5 top-32 left-1/4 cocktailDescription\">\r\n                <h3 class=\"relative mb-5 text-white text-8xl\" data-cocktail-name=\"\">Cocktail Name</h3>\r\n                <article class=\"w-5/6 text-3xl text-white max-h-36 line-clamp-6\" data-cocktail-description=\"\"> This is short coctail description which will be here when i will pull up data from an api</article>\r\n            </div>\r\n\r\n            <div class=\"relative flex flex-col w-6/6 h-1/4 top-1/3\">\r\n                <h3 class=\"relative ml-24 text-4xl font-semibold text-white left-1/4\">Pick a coctail</h3>\r\n                <div class=\"box-border w-5/6 h-full mt-5 overflow-x-auto whitespace-nowrap\" id=\"cocktailMenu\">\r\n                </div>\r\n            </div>\r\n        </section>\r\n\r\n        \r\n        <div class=\"absolute flex flex-col-reverse invisible w-4/12 right-1/4 h-4/5\" id=\"cocktailContent1\" data-type-content=\"cocktail\">\r\n        </div>\r\n        <div class=\"absolute flex flex-col-reverse invisible w-4/12 right-1/4\" id=\"cocktailContent2\" data-type-content=\"cocktail\">\r\n        </div>\r\n        <div class=\"absolute flex flex-col-reverse invisible w-4/12 right-1/4 h-5/6\" id=\"cocktailContent3\" data-type-content=\"cocktail\"></div>\r\n\r\n\r\n\r\n        <img class=\"absolute invisible w-3/12 bg-transparent h-4/5\" id=\"cocktailGlass\" data-type-image=\"cocktail\" data-inside=\"cocktailContent1\" src=\"/glass.de71877d.png\" alt=\"Coctail glass\">\r\n        <img class=\"absolute invisible bg-transparent h-4/5\" id=\"highGlass\" data-type-image=\"cocktail\" data-inside=\"cocktailContent2\" src=\"/highballGlass.cdbaa87d.png\" alt=\"High glass\">\r\n        <img class=\"absolute invisible w-3/12 bg-transparent h-2/5\" id=\"oldGlass\" data-type-image=\"cocktail\" data-inside=\"cocktailContent3\" src=\"/oldGlass.28d2b739.png\" alt=\"Old Glass\">\r\n\r\n\r\n\r\n\r\n\r\n        <section class=\"flex flex-col w-5/12 h-full mt-5 bg-white\">\r\n            <div class=\"relative flex self-end mr-20 border-2 border-black w-96 h-14 rounded-2xl\" id=\"searchBar\">\r\n                <input class=\"w-full max-w-xs p-2 mt-2 text-2xl bg-transparent outline-none h-3/4 focus:border-none\" id=\"searchInput\" type=\"text\" placeholder=\"Find a coctail\">\r\n                <div class=\"absolute z-0 w-16 h-full ml-8 bg-pink-700 rounded-2xl left-72\"></div>\r\n                <img class=\"absolute h-12 ml-2 cursor-pointer w-28 z-1 left-72 \" src=\"/search.134911cd.png\" alt=\"search\" id=\"searchIcon\">    \r\n            </div>\r\n\r\n            <img class=\"relative w-2/5 right-5 bottom-1/4 top-1/3 h-1/4\" src=\"/arrow.c5a926bd.png\" alt=\"arrow\" id=\"arrow1\">\r\n            <div class=\"relative self-end w-5/12 mb-16 mr-9 h-5/6\" id=\"ingredientList\">  \r\n            </div>\r\n        </section>\r\n    </main>\r\n<script src=\"/content.149a4bb1.js\"></\script></body>\r\n</html>\r\n";
-
-},{}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -628,8 +768,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["jKXIO","bYQxT"], "bYQxT", "parcelRequire4dac")
+},{}]},["fFtTY","1gZ06"], "1gZ06", "parcelRequire4dac")
 
-</script>   
-</body>
-</html>
+//# sourceMappingURL=index.f4dc8788.js.map

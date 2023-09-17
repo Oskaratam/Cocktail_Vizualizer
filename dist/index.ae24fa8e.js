@@ -576,7 +576,8 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 },{}],"aOTjL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "coctails", ()=>coctails);
+parcelHelpers.export(exports, "cocktails", ()=>cocktails);
+parcelHelpers.export(exports, "cocktails2", ()=>cocktails2);
 const ingredientsColors = {
     "whiteRum": "F5F5F5",
     "sodaWater": "F8F8F8",
@@ -593,8 +594,8 @@ const ingredientsColors = {
     "vodka": "FCF9F5",
     "coffeeLiquer": "381B01"
 };
-const coctails = [];
-class Coctail {
+const cocktails = [], cocktails2 = [];
+class Cocktail {
     constructor(name, imageSource, description, glass, mainIngredients, extraIngredients){
         this.name = name;
         this.imageSource = imageSource;
@@ -604,7 +605,7 @@ class Coctail {
         this.extraIngredients = extraIngredients;
     }
 }
-coctails.push(new Coctail("Old Fashioned", "./coctails/old-fashioned.jpg", "Try this twist on an old fashioned cocktail, with a double shot of espresso accompanying the classic flavours of bourbon and Angostura bitters", "oldGlass", [
+cocktails.push(new Cocktail("Old Fashioned", "./coctails/old-fashioned.jpg", "Try this twist on an old fashioned cocktail, with a double shot of espresso accompanying the classic flavours of bourbon and Angostura bitters", "oldGlass", [
     [
         "Double shot espresso",
         ingredientsColors.espresso,
@@ -624,7 +625,7 @@ coctails.push(new Coctail("Old Fashioned", "./coctails/old-fashioned.jpg", "Try 
     "2 dashes Angostura bitters",
     "Orange zest"
 ]));
-coctails.push(new Coctail("Pina Colada", "./coctails/pina-colada.jpg", "A tropical blend of rich coconut cream, white rum and tangy pineapple – serve with an umbrella for kitsch appeal", "highGlass", [
+cocktails.push(new Cocktail("Pina Colada", "./coctails/pina-colada.jpg", "A tropical blend of rich coconut cream, white rum and tangy pineapple – serve with an umbrella for kitsch appeal", "highGlass", [
     [
         "Pineaplle Juice",
         ingredientsColors.pineappleJuice,
@@ -643,7 +644,7 @@ coctails.push(new Coctail("Pina Colada", "./coctails/pina-colada.jpg", "A tropic
 ], [
     "Wedge of pineapple"
 ]));
-coctails.push(new Coctail("Witch's Brew", "./coctails/witch.jpg", "Get some berries bubbling in your cauldron and add some edible glitter to this spooky purple cocktail, made with vodka, liqueur and curacao", "coctailGlass", [
+cocktails.push(new Cocktail("Witch's Brew", "./coctails/witch.jpg", "Get some berries bubbling in your cauldron and add some edible glitter to this spooky purple cocktail, made with vodka, liqueur and curacao", "coctailGlass", [
     [
         "Vodka",
         ingredientsColors.vodka,
@@ -672,7 +673,7 @@ coctails.push(new Coctail("Witch's Brew", "./coctails/witch.jpg", "Get some berr
 ], [
     "4 cocktail cherries"
 ]));
-coctails.push(new Coctail("Mojito", "./coctails/mojito.jpg", "Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water", "highGlass", [
+cocktails.push(new Cocktail("Mojito", "./coctails/mojito.jpg", "Mix this classic cocktail for a party using fresh mint, white rum, sugar, zesty lime and cooling soda water", "highGlass", [
     [
         "Soda Water",
         ingredientsColors.sodaWater,
@@ -693,7 +694,7 @@ coctails.push(new Coctail("Mojito", "./coctails/mojito.jpg", "Mix this classic c
     "10 fresh mint leaves",
     "Ice cubes"
 ]));
-coctails.push(new Coctail("Espresso Martini", "./coctails/espresso-martini.jpg", "Learn how to make this classic coffee cocktail. Our easy recipe uses freshly brewed espresso, a dash of coffee liqueur and a simple sugar syrup.", "coctailGlass", [
+cocktails.push(new Cocktail("Espresso Martini", "./coctails/espresso-martini.jpg", "Learn how to make this classic coffee cocktail. Our easy recipe uses freshly brewed espresso, a dash of coffee liqueur and a simple sugar syrup.", "coctailGlass", [
     [
         "Vodka",
         ingredientsColors.vodka,
@@ -717,6 +718,8 @@ coctails.push(new Coctail("Espresso Martini", "./coctails/espresso-martini.jpg",
 ], [
     "Ice"
 ]));
+///////////////////////////////////////////////////////////////
+cocktails2.push();
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
