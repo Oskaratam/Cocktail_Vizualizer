@@ -1,12 +1,5 @@
-/* 
-1.create a div (with class to add transition) for each ingredient and add to the proper content div
-2.set a height with %
-3.add a proper name (html element with class) for each div
-4.set a color with # code
-5.delete all divs before setting again
-*/
 
-import { cocktails } from "./cocktail-creator.js";
+import Fuse from 'fuse.js';
 
 
 const searchIcon = document.querySelector('#searchIcon'),
@@ -34,7 +27,6 @@ const setCocktail = (cocktail) => {
         const glassContent = document.getElementById(glass.dataset.inside);
         glassContent.classList.remove('invisible');
 
-        console.log(cocktail.mainIngredients[0])
 
         //Main animation
 
@@ -88,29 +80,27 @@ const setCocktail = (cocktail) => {
         }
 }
 
+let cocktails, cocktails2;
+fetch("http://localhost:3000/cocktails").then(res => res.json()).then(data => {
+    cocktails = data[0];
+    cocktails2 = data[1];
+})
 
 
     
 //SEARCH A DRINK
 searchIcon.addEventListener('click', async() => {
-    const search = searchInput.value;
-    const url = `https://thecocktaildb.com/api/json/v1/1/search.php?s=${search}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-        console.log(data);
-
-        if (data.drinks === null){
-            console.log('DRINK NOT FOUND')
-        } else {
-            const coctail = data.drinks[0]
-            coctailName.innerHTML = coctail.strDrink;
-            cocktailDescription.innerHTML = coctail.strInstructions;
-        }
-
-    } catch (error) {
-        console.error(error);
+    const searchString = searchInput.value;
+    const allCocktails = cocktails.concat(cocktails2);
+    const searchOptions = {
+        keys: ['name']
     }
+    const fuse = new Fuse(allCocktails, searchOptions),
+        result = fuse.search(searchString),
+        foundCocktail = result[0].item;
+
+    document.querySelector('.menuItemPicked')?.classList.remove('menuItemPicked');
+    setCocktail(foundCocktail);    
 })
 
 export { setCocktail }

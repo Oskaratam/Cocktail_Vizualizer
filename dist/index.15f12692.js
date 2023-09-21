@@ -574,7 +574,10 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"5NRZg":[function(require,module,exports) {
-var _cocktailCreatorJs = require("./cocktail-creator.js");
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "cocktails", ()=>cocktails);
+parcelHelpers.export(exports, "cocktails2", ()=>cocktails2);
 var _indexJs = require("./index.js");
 const cocktailNameMain = document.querySelector("[data-cocktail-name]"), cocktailDescription = document.querySelector("[data-cocktail-description]"), cocktailMenu = document.querySelector("#cocktailMenu"), alcoFreeButton = document.querySelector("#alcoFreeButton"), alcoButton = document.querySelector("#alcoButton");
 const renderMenu = (cocktailsList)=>{
@@ -594,7 +597,12 @@ const renderMenu = (cocktailsList)=>{
         });
     }
 };
-renderMenu((0, _cocktailCreatorJs.cocktails));
+let cocktails, cocktails2;
+fetch("http://localhost:3000/cocktails").then((res)=>res.json()).then((data)=>{
+    cocktails = data[0];
+    cocktails2 = data[1];
+    renderMenu(cocktails);
+});
 const deleteMenu = ()=>{
     document.querySelectorAll(".menuItem").forEach((item)=>{
         item.remove();
@@ -602,17 +610,17 @@ const deleteMenu = ()=>{
 };
 alcoFreeButton.addEventListener("click", ()=>{
     deleteMenu();
-    renderMenu((0, _cocktailCreatorJs.cocktails2));
-    (0, _indexJs.setCocktail)((0, _cocktailCreatorJs.cocktails2)[0]);
+    renderMenu(cocktails2);
+    (0, _indexJs.setCocktail)(cocktails2[0]);
     document.querySelector(".menuItem").classList.add("menuItemPicked");
 });
 alcoButton.addEventListener("click", ()=>{
     deleteMenu();
-    renderMenu((0, _cocktailCreatorJs.cocktails));
-    (0, _indexJs.setCocktail)((0, _cocktailCreatorJs.cocktails)[0]);
+    renderMenu(cocktails);
+    (0, _indexJs.setCocktail)(cocktails[0]);
     document.querySelector(".menuItem").classList.add("menuItemPicked");
 });
 
-},{"./cocktail-creator.js":"1gZ06","./index.js":"7SwCM"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
+},{"./index.js":"7SwCM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["huunz","5NRZg"], "5NRZg", "parcelRequire4dac")
 
 //# sourceMappingURL=index.15f12692.js.map

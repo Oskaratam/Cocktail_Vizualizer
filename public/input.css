@@ -24,7 +24,7 @@ h3 {
 }
 
 .homepage {
-    height: 92vh;
+    height: 91vh;
     width: 95vw;
     margin: 40px 60px 0 50px;
     box-shadow: 0 0 30px grey;
@@ -38,7 +38,7 @@ h3 {
     margin:0px 1.4vw;
     border-radius: 15%;
     width: 17.3%;
-    height: 90%;
+    height: 93%;
     border: 0 solid;
     box-shadow: 0 0 30px grey;
     transition: border 0.3s;
@@ -69,6 +69,7 @@ h3 {
 
 
 
+
 /*GLASSES*/
 #cocktailGlass {
     top: 15%;
@@ -86,7 +87,6 @@ h3 {
     right: 32%;
     width: 20%;
 }
-
 #cocktailContent2 {
     height: 60%;
     margin-top: 20vh;
@@ -103,14 +103,108 @@ h3 {
 #cocktailContent3 {
     height: 25%;
     margin-top: 33vh;
-    clip-path: polygon(21% 0%, 73% 0%, 71% 100%, 23% 100%);
+    clip-path: polygon(21% 0%, 73% 0%, 73% 100%, 23% 100%);
 }
 
-#arrow1 {
-    transform: rotate(-130deg);
-    left: 17%;
-    width: 33%;
+@media (max-width: 1344px) {
+    .menu{
+        background-color: #e30b5c;
+    }
+    #highGlass {
+        width:30%;
+        right:27%;
+    }
+    #cocktailContent2 {
+        width:50%;
+        top:4%;
+        height:44%;
+        right:16.5%;
+    }
+    #cocktailMenu {
+        width: 100%;
+        height: 60%;
+    }
+    .homepage {
+        height:120vh;
+    }
+    #oldGlass {
+        width: 43%;
+        height: 30%;
+        left: 37%;
+    }
+    #cocktailContent3 {
+        height: 20%;
+        width:52%;
+        left:34%;
+        top: 6%;
+    }
+    #cocktailGlass {
+        width:32%;
+        height: 60%;
+        left:42%;
+        top: 10%;
+    }
+    #cocktailContent1 {
+        height:16%;
+        left:38%;
+        width:40%;
+    }
 }
+
+@media (max-width: 1054px){
+    #highGlass {
+        width:34%;
+        height: 48%;
+        left:40%;
+    }
+    #cocktailContent2 {
+        width:56%;
+        left:29.5%;
+        top:0%;
+        height:40%;
+    }
+    #oldGlass {
+        top:25%;
+    }
+    #cocktailContent3 {
+        top:1%;
+    }
+    #cocktailGlass {
+        width:33%;
+        height: 52%;
+        left:42%;
+    }
+    #cocktailContent1 {
+        width:39%;
+        height:13%;
+        left:39%;
+        top:0%;
+    }
+}
+
+@media (max-width: 840px) {
+    #highGlass {
+        height:42%;
+    }
+    #cocktailContent2 {
+        height:34%;
+    }
+    #oldGlass {
+        width: 45%;
+        height:21%
+    }
+    #cocktailContent3 {
+        width:54%;
+        height:13%;
+    }
+    #cocktailGlass {
+        height:47%;
+    }
+    #cocktailContent1 {
+        height:11%;
+    }
+}
+
 
 
 /*ANIMATION*/
@@ -130,6 +224,11 @@ h3 {
 
 /*INGREDIENT LIST*/
 
+#ingredientList {
+    top: 3vh;
+}
+
+
 .ingredientListItem {
     /*color: rgb(190, 24, 93);*/
     color: grey;
@@ -139,3 +238,41 @@ h3 {
     padding-bottom: 2%;
     border-bottom: 3px dotted grey;
 }
+
+@media (max-width: 1440px) {
+    .ingredientListItem {
+        font-size: 1.25rem
+    }
+}
+@media (max-width: 1054px) {
+    .ingredientName {
+        font-size:small;
+    }
+
+    .ingredientListItem {
+        font-size: 1rem
+    }
+}
+@media (max-width: 840px) {
+    .ingredientName {
+        font-size:x-small;
+    }
+    .ingredientListItem {
+        font-size:0.875rem;
+        border-bottom: 1px dotted grey;
+    }
+}
+@media (max-width: 600px) {
+    .ingredientListItem {
+        font-size:0.5rem;
+    }
+}
+
+
+
+
+/*
+
+starts collapsing at 1600px of width and 750px of height
+
+*/

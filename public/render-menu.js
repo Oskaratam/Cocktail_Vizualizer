@@ -1,5 +1,6 @@
-import { cocktails, cocktails2 } from "./cocktail-creator.js"
+
 import { setCocktail } from "./index.js";
+
 
 const cocktailNameMain = document.querySelector('[data-cocktail-name]'),
       cocktailDescription = document.querySelector('[data-cocktail-description]'),
@@ -31,7 +32,15 @@ const renderMenu = (cocktailsList) => {
         })
     }
 }
-renderMenu(cocktails);
+
+let cocktails, cocktails2;
+
+fetch("http://localhost:3000/cocktails").then(res => res.json()).then(data => {
+    cocktails = data[0];
+    cocktails2 = data[1];
+    renderMenu(cocktails);
+})
+
 
 const deleteMenu = () => {
     document.querySelectorAll('.menuItem').forEach(item => {item.remove()})
@@ -51,6 +60,8 @@ alcoButton.addEventListener('click', () => {
     setCocktail(cocktails[0]);
     document.querySelector('.menuItem').classList.add('menuItemPicked');
 });
+
+export { cocktails, cocktails2}
 
 
 
