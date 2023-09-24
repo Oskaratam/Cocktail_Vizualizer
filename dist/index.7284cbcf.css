@@ -1,0 +1,153 @@
+@media (width <= 1344px) {
+  .menu {
+    background-color: #e30b5c;
+  }
+
+  #highGlass {
+    width: 30%;
+    right: 27%;
+  }
+
+  #cocktailContent2 {
+    width: 50%;
+    height: 44%;
+    top: 4%;
+    right: 16.5%;
+  }
+
+  #cocktailMenu {
+    width: 100%;
+    height: 60%;
+  }
+
+  .homepage {
+    height: 120vh;
+  }
+
+  #oldGlass {
+    width: 43%;
+    height: 30%;
+    left: 37%;
+  }
+
+  #cocktailContent3 {
+    width: 52%;
+    height: 20%;
+    top: 6%;
+    left: 34%;
+  }
+
+  #cocktailGlass {
+    width: 32%;
+    height: 60%;
+    top: 10%;
+    left: 42%;
+  }
+
+  #cocktailContent1 {
+    width: 40%;
+    height: 16%;
+    left: 38%;
+  }
+}
+
+@media (width <= 1054px) {
+  #highGlass {
+    width: 34%;
+    height: 48%;
+    left: 40%;
+  }
+
+  #cocktailContent2 {
+    width: 56%;
+    height: 40%;
+    top: 0%;
+    left: 29.5%;
+  }
+
+  #oldGlass {
+    top: 25%;
+  }
+
+  #cocktailContent3 {
+    top: 1%;
+  }
+
+  #cocktailGlass {
+    width: 33%;
+    height: 52%;
+    left: 42%;
+  }
+
+  #cocktailContent1 {
+    width: 39%;
+    height: 13%;
+    top: 0%;
+    left: 39%;
+  }
+}
+
+@media (width <= 840px) {
+  #highGlass {
+    height: 42%;
+  }
+
+  #cocktailContent2 {
+    height: 34%;
+  }
+
+  #oldGlass {
+    width: 45%;
+    height: 21%;
+  }
+
+  #cocktailContent3 {
+    width: 54%;
+    height: 13%;
+  }
+
+  #cocktailGlass {
+    height: 47%;
+  }
+
+  #cocktailContent1 {
+    height: 11%;
+  }
+}
+
+@media (width <= 450px) {
+  #highGlass {
+    width: 37%;
+    height: 32%;
+  }
+
+  #cocktailContent2 {
+    width: 60%;
+    height: 24%;
+  }
+
+  #oldGlass {
+    height: 19%;
+    top: 15%;
+  }
+
+  #cocktailContent3 {
+    height: 12%;
+    top: -9%;
+  }
+
+  #cocktailGlass {
+    width: 40%;
+    height: 30%;
+    left: 38%;
+  }
+
+  #cocktailContent1 {
+    width: 47.5%;
+    height: 8%;
+    top: -3%;
+    left: 34.5%;
+  }
+}
+
+/*# sourceMappingURL=index.7284cbcf.css.map */

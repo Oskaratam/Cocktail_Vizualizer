@@ -89,18 +89,35 @@ fetch("http://localhost:3000/cocktails").then(res => res.json()).then(data => {
 
     
 //SEARCH A DRINK
-searchIcon.addEventListener('click', async() => {
+
+const searchDrink = () => {
     const searchString = searchInput.value;
     const allCocktails = cocktails.concat(cocktails2);
     const searchOptions = {
         keys: ['name']
     }
     const fuse = new Fuse(allCocktails, searchOptions),
-        result = fuse.search(searchString),
-        foundCocktail = result[0].item;
+        result = fuse.search(searchString);
+        
+        if (result[0] == undefined || result[0] == null) {
+            alert('Cocktail not found');
+        } else {
+            const foundCocktail = result[0].item;
+            document.querySelector('.menuItemPicked')?.classList.remove('menuItemPicked');
+            setCocktail(foundCocktail);
+        }
+}
+searchIcon.addEventListener('click', async() => {
+    searchDrink();
+})
 
-    document.querySelector('.menuItemPicked')?.classList.remove('menuItemPicked');
-    setCocktail(foundCocktail);    
+  
+
+
+window.addEventListener('keypress', (e) => {
+    if(e.key == 'Enter') {
+        searchDrink();
+    }
 })
 
 export { setCocktail }

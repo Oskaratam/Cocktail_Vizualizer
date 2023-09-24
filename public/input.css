@@ -53,6 +53,12 @@ h3 {
     height: 0.75rem;
     cursor: pointer;
 }
+@media (max-width: 600px){
+    #cocktailMenu::-webkit-scrollbar{
+        height: 0.25rem
+    }
+
+}
 
 #cocktailMenu::-webkit-scrollbar-thumb {
     background: white;
@@ -205,6 +211,36 @@ h3 {
     }
 }
 
+@media (max-width: 450px) {
+    #highGlass {
+        height:32%;
+        width:37%;
+    }
+    #cocktailContent2 {
+        height: 24%;
+        width: 60%;
+    }
+    #oldGlass {
+        top:15%;
+        height:19%;
+    }
+    #cocktailContent3 {
+        top:-9%;
+        height:12%;
+    }
+    #cocktailGlass {
+        left:38%;
+        height:30%;
+        width: 40%;
+    }
+    #cocktailContent1 {
+        top:-3%;
+        left:34.5%;
+        width:47.5%;
+        height:8%;
+    }
+}
+
 
 
 /*ANIMATION*/
@@ -266,6 +302,21 @@ h3 {
     .ingredientListItem {
         font-size:0.5rem;
     }
+}
+
+@media (max-width: 450px) {
+    .ingredientName {
+        font-size:0.4rem;
+    }
+    #plainText {
+        font-size:0.4rem;
+        line-height: 0.65rem;
+    }
+    .ingredientListItem,
+    #searchInput {
+        font-size: 0.4rem;
+    }
+
 }
 
 

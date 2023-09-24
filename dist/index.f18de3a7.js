@@ -635,7 +635,7 @@ fetch("http://localhost:3000/cocktails").then((res)=>res.json()).then((data)=>{
     cocktails2 = data[1];
 });
 //SEARCH A DRINK
-searchIcon.addEventListener("click", async ()=>{
+const searchDrink = ()=>{
     const searchString = searchInput.value;
     const allCocktails = cocktails.concat(cocktails2);
     const searchOptions = {
@@ -643,9 +643,19 @@ searchIcon.addEventListener("click", async ()=>{
             "name"
         ]
     };
-    const fuse = new (0, _fuseJsDefault.default)(allCocktails, searchOptions), result = fuse.search(searchString), foundCocktail = result[0].item;
-    document.querySelector(".menuItemPicked")?.classList.remove("menuItemPicked");
-    setCocktail(foundCocktail);
+    const fuse = new (0, _fuseJsDefault.default)(allCocktails, searchOptions), result = fuse.search(searchString);
+    if (result[0] == undefined || result[0] == null) alert("Cocktail not found");
+    else {
+        const foundCocktail = result[0].item;
+        document.querySelector(".menuItemPicked")?.classList.remove("menuItemPicked");
+        setCocktail(foundCocktail);
+    }
+};
+searchIcon.addEventListener("click", async ()=>{
+    searchDrink();
+});
+window.addEventListener("keypress", (e)=>{
+    if (e.key == "Enter") searchDrink();
 });
 
 },{"fuse.js":"4xnao","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4xnao":[function(require,module,exports) {
