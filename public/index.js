@@ -81,7 +81,7 @@ const setCocktail = (cocktail) => {
 }
 
 let cocktails, cocktails2;
-fetch("http://localhost:3000/cocktails").then(res => res.json()).then(data => {
+fetch("https://cocktails-server-hubu.onrender.com").then(res => res.json()).then(data => {
     cocktails = data[0];
     cocktails2 = data[1];
 })
