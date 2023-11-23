@@ -5,7 +5,7 @@
   "scripts": {
     "build": "parcel build ./public/index.html",
     "dev": "parcel ./public/index.html --no-cache",
-    "startServer": "nodemon ./server/cocktail-creator.js"
+    "startServer": "node ./server/cocktail-creator.js"
   },
   "keywords": [],
   "author": "",
