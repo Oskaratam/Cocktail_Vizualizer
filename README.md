@@ -7,3 +7,4 @@ Technologies Used:
 * Tailwind Css
 * Node JS
 * Express JS
+* Parcel
